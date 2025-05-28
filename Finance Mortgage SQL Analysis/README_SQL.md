@@ -2,7 +2,16 @@
 
 ## Introduction
 
-This README provides comprehensive details on the analysis questions and analysis conducted for the finance-mortgage-loan dataset, focusing on SQL implementation.
+This README provides comprehensive details on the database/ tables creation, required data manipulation and SQL query creation that can act as the source of the visuals in the power bi file included. 
+In a nutshell,
+I have an power bi file named - Loan_Mortgage_Analysis.pbix 
+In the sql files :
+1) 'Finance_Mortgage_database_script.sql'
+   Creates all the tables and fills it with data
+2) 'Financial Data Preprocessing.sql'
+   Does relevant data type changes, addition of columns and views to facilitate creation of proper data visualization queries.
+3) 'Financial Data Visualization.sql'
+   SQL implemenatation to create queries corresponding to each visual included in the powerbi file.
 
 ## 1. Detail of the Data Set
 
