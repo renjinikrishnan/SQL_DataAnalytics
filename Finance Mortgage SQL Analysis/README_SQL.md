@@ -203,6 +203,7 @@ Displays the relationship between purchase price and monthly income over 2019 an
 - **Growth**: Younger demographics and investment properties present expansion opportunities
 
 
+
 ### Vocabulary:
 
 - **Property:**
@@ -317,6 +318,7 @@ CA     | $73.5M
 NY     | $68.2M
 PA     | $65.8M
 ```
+
 
 
 
