@@ -1,5 +1,29 @@
-# Finance Mortgage Loan Analysis: SQL Analysis
+# Finance Mortgage Loan Analysis
 
+> **Comprehensive SQL analysis of 2,000+ mortgage applications, uncovering key trends in borrowing patterns across demographics and geography**
+
+## Project Highlights
+
+- **Dataset**: 2,000 mortgage applications across 4 interconnected tables
+- **Analysis Period**: 2019
+- **Total Loan Amount**: $1.06 Billion
+- **Tools Used**: SQL Server, Power BI
+- **Key Finding**: 55+ age group represents 49% of total loan volume
+
+## Key Business Insights
+
+1. **Geographic Concentration**: Top 5 states (CA, NY, PA, MI, KY) account for 35% of loans
+2. **Age Factor**: 55+ borrowers dominate with nearly half of all loan amounts
+3. **Gender Gap**: Female borrowers represent 2x the loan volume of male borrowers
+4. **Property Focus**: 70% of loans are for primary residences
+5. **Marital Status**: Married couples account for 56% of total loans
+
+## Quick Links
+- [Power BI Dashboard](Loan_Mortgage_Analysis.pbix)
+- [SQL Queries](Financial%20Data%20Visualization.sql)
+- [Data Setup](Finance_Mortgage_database_script.sql)
+
+---
 ## Introduction
 
 This README provides comprehensive details on the database/ tables creation, required data manipulation and SQL query creation that can act as the source of the visuals in the power bi file included. 
@@ -211,5 +235,65 @@ Example:
 Home Price: $300,000
 Down Payment: $60,000 (20%)
 Loan Amount: $240,000
+
+
+## How to Reproduce This Analysis
+
+### Prerequisites
+- SQL Server Management Studio (SSMS)
+- Power BI Desktop (optional)
+
+### Step-by-Step Setup (5 minutes)
+
+1. **Create Database**
+```sql
+CREATE DATABASE [Finance Mortgage Loan Analysis]
+GO
+USE [Finance Mortgage Loan Analysis]
+GO
+```
+
+2. **Load Data**
+```bash
+# Run this in SSMS
+-- Execute: Finance_Mortgage_database_script.sql
+-- This creates tables and loads 2,000 records
+```
+
+3. **Preprocess Data**
+```bash
+-- Execute: Financial Data Preprocessing.sql
+-- Adds primary keys, foreign keys, and views
+```
+
+4. **Run Analysis**
+```bash
+-- Execute: Financial Data Visualization.sql
+-- Generates all insights and results
+```
+
+5. **View Dashboard (Optional)**
+```bash
+# Open Loan_Mortgage_Analysis.pbix in Power BI Desktop
+```
+
+### Sample Query Test
+```sql
+-- Quick test to verify setup
+SELECT TOP 5 State, SUM(Loan_Amount) AS Total
+FROM Borrowers B
+JOIN Financials F ON B.Borrower_Key = F.Borrower_Key
+GROUP BY State
+ORDER BY Total DESC;
+```
+
+**Expected Output:**
+```
+State  | Total
+-------|----------
+CA     | $73.5M
+NY     | $68.2M
+PA     | $65.8M
+```
 
 
